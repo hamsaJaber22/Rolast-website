@@ -1,961 +1,996 @@
-                                    * {
-                                        padding: 0;
-                                        margin: 0;
-                                        box-sizing: border-box;
+                                * {
+                                    padding: 0;
+                                    margin: 0;
+                                    box-sizing: border-box;
+                                }
+                                
+                                html {
+                                    --mainColor: #0fb45f;
+                                    --footerColor: #485294;
+                                    font-family: "prompt";
+                                }
+                                
+                                @font-face {
+                                    src: url("../fonts/Prompt/Prompt-ExtraLight.ttf");
+                                    font-family: "prompt";
+                                }
+                                
+                                li {
+                                    list-style: none;
+                                }
+                                
+                                a {
+                                    text-decoration: none;
+                                }
+                                
+                                .btn {
+                                    cursor: pointer;
+                                    text-transform: capitalize;
+                                    color: rgb(255, 255, 255);
+                                }
+                                
+                                .container {
+                                    width: 100%;
+                                    margin: auto;
+                                    padding-right: 25px;
+                                    padding-left: 25px;
+                                }
+                                
+                                .container-h {
+                                    width: 85%;
+                                    margin: auto;
+                                }
+                                
+                                .row {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                }
+                                /* start nav */
+                                
+                                nav {
+                                    background-color: rgb(255, 255, 255);
+                                    padding: 25px 0;
+                                    /* position: relative; */
+                                    position: sticky;
+                                    top: 0;
+                                    width: 100%;
+                                    z-index: 9999999;
+                                }
+                                
+                                nav .logo a {
+                                    cursor: pointer;
+                                }
+                                
+                                nav .nav-item {
+                                    width: 70%;
+                                }
+                                
+                                nav .nav-item .list-item {
+                                    display: flex;
+                                    width: 50%;
+                                    justify-content: space-between;
+                                    margin-left: 100px;
+                                }
+                                
+                                nav .list-item .item a {
+                                    text-transform: uppercase;
+                                    color: var(--footerColor);
+                                    font-weight: 600;
+                                    transition: 0.3s;
+                                    cursor: pointer;
+                                }
+                                
+                                nav .list-item .item a:hover {
+                                    color: var(--mainColor);
+                                }
+                                
+                                nav .list-item .item {
+                                    position: relative;
+                                }
+                                /*Start Dropdown */
+                                
+                                nav .list-item .item .dropdown-menue {
+                                    position: absolute;
+                                    background-color: var(--mainColor);
+                                    top: 49px;
+                                    transition: 0.9s;
+                                    padding: 10px 20px;
+                                    width: 150px;
+                                    opacity: 0;
+                                    visibility: hidden;
+                                }
+                                
+                                nav .list-item .item:hover .dropdown-menue {
+                                    opacity: 1;
+                                    visibility: visible;
+                                }
+                                
+                                nav .list-item .dropdown-menue .dropdown-item p {
+                                    text-transform: capitalize;
+                                    font-size: 16px;
+                                    color: #fff;
+                                    transition: 0.7s;
+                                    padding-bottom: 10px;
+                                }
+                                
+                                nav .list-item .dropdown-menue .dropdown-item:hover p {
+                                    padding-left: 5px;
+                                    color: #fff;
+                                }
+                                /* End Drobdown */
+                                
+                                nav .btnh {
+                                    background-color: var(--mainColor);
+                                    position: absolute;
+                                    top: 0;
+                                    right: 0;
+                                    height: 100%;
+                                    width: 20%;
+                                    border: none;
+                                    cursor: pointer;
+                                    color: white;
+                                    font-size: 20px;
+                                }
+                                
+                                nav .btnh i {
+                                    color: white;
+                                    font-size: 20px;
+                                }
+                                
+                                @media (max-width: 575.98px) {
+                                    nav .row {
+                                        display: inline-block;
+                                        text-align: center;
                                     }
-                                    
-                                    html {
-                                        --mainColor: #0fb45f;
-                                        --footerColor: #485294;
-                                        font-family: "prompt";
-                                    }
-                                    
-                                    @font-face {
-                                        src: url("../fonts/Prompt/Prompt-ExtraLight.ttf");
-                                        font-family: "prompt";
-                                    }
-                                    
-                                    li {
-                                        list-style: none;
-                                    }
-                                    
-                                    a {
-                                        text-decoration: none;
-                                    }
-                                    
-                                    .btn {
-                                        cursor: pointer;
-                                        text-transform: capitalize;
-                                        color: rgb(255, 255, 255);
-                                    }
-                                    
-                                    .container {
-                                        width: 100%;
-                                        margin: auto;
-                                        padding-right: 25px;
-                                        padding-left: 25px;
-                                    }
-                                    
-                                    .container-h {
-                                        width: 85%;
-                                        margin: auto;
-                                    }
-                                    
-                                    .row {
-                                        display: flex;
-                                        justify-content: space-between;
-                                        align-items: center;
-                                    }
-                                    /* start nav */
-                                    
-                                    nav {
-                                        background-color: rgb(255, 255, 255);
-                                        padding: 25px 0;
-                                        /* position: relative; */
-                                        position: sticky;
-                                        top: 0;
-                                        width: 100%;
-                                        z-index: 9999999;
-                                    }
-                                    
-                                    nav .logo a {
-                                        cursor: pointer;
-                                    }
-                                    
                                     nav .nav-item {
-                                        width: 70%;
+                                        padding-top: 20px;
                                     }
-                                    
                                     nav .nav-item .list-item {
-                                        display: flex;
-                                        width: 50%;
-                                        justify-content: space-between;
-                                        margin-left: 100px;
+                                        margin: 0 20px;
                                     }
-                                    
                                     nav .list-item .item a {
-                                        text-transform: uppercase;
-                                        color: var(--footerColor);
-                                        font-weight: 600;
-                                        transition: 0.3s;
-                                        cursor: pointer;
+                                        padding-left: 15px;
                                     }
-                                    
-                                    nav .list-item .item a:hover {
-                                        color: var(--mainColor);
-                                    }
-                                    
                                     nav .btnh {
                                         background-color: var(--mainColor);
-                                        position: absolute;
-                                        top: 0;
-                                        right: 0;
-                                        height: 100%;
-                                        width: 20%;
-                                        border: none;
-                                        cursor: pointer;
-                                        color: white;
-                                        font-size: 20px;
+                                        width: 30%;
+                                        height: 50%;
                                     }
-                                    
-                                    nav .btnh i {
-                                        color: white;
-                                        font-size: 20px;
+                                }
+                                
+                                @media (min-width: 576px) and (max-width: 767.98px) {
+                                    nav .row {
+                                        display: inline-block;
+                                        text-align: center;
                                     }
-                                    
-                                    @media (max-width: 575.98px) {
-                                        nav .row {
-                                            display: inline-block;
-                                            text-align: center;
-                                        }
-                                        nav .nav-item {
-                                            padding-top: 20px;
-                                        }
-                                        nav .nav-item .list-item {
-                                            margin: 0 20px;
-                                        }
-                                        nav .list-item .item a {
-                                            padding-left: 15px;
-                                        }
-                                        nav .btnh {
-                                            background-color: var(--mainColor);
-                                            width: 30%;
-                                            height: 50%;
-                                        }
+                                    nav .nav-item {
+                                        padding-top: 20px;
                                     }
-                                    
-                                    @media (min-width: 576px) and (max-width: 767.98px) {
-                                        nav .row {
-                                            display: inline-block;
-                                            text-align: center;
-                                        }
-                                        nav .nav-item {
-                                            padding-top: 20px;
-                                        }
-                                        nav .nav-item .list-item {
-                                            margin: 0 100px;
-                                        }
-                                        nav .list-item .item a {
-                                            padding-left: 15px;
-                                        }
-                                        nav .btnh {
-                                            background-color: var(--mainColor);
-                                            width: 30%;
-                                            height: 50%;
-                                        }
+                                    nav .nav-item .list-item {
+                                        margin: 0 100px;
                                     }
-                                    
-                                    @media (min-width: 768px) and (max-width: 991.98px) {
-                                        nav .nav-item .list-item {
-                                            display: flex;
-                                            width: 70%;
-                                            justify-content: space-between;
-                                            margin-left: -10px;
-                                        }
+                                    nav .list-item .item a {
+                                        padding-left: 15px;
                                     }
-                                    
-                                    @media (min-width: 992px) and (max-width: 1199.98px) {
-                                        nav .nav-item .list-item {
-                                            display: flex;
-                                            width: 70%;
-                                            justify-content: space-between;
-                                            margin-left: -10px;
-                                        }
+                                    nav .btnh {
+                                        background-color: var(--mainColor);
+                                        width: 30%;
+                                        height: 50%;
                                     }
-                                    /* end nav */
-                                    /* start header */
-                                    
-                                    header {
-                                        background-image: url(../img/exterior-streetview-black.webp);
-                                        height: 100vh;
-                                        background-size: cover;
-                                        background-position: center;
+                                }
+                                
+                                @media (min-width: 768px) and (max-width: 991.98px) {
+                                    nav .nav-item .list-item {
                                         display: flex;
-                                        align-items: center;
-                                        position: relative;
-                                        background-repeat: no-repeat;
+                                        width: 70%;
+                                        justify-content: space-between;
+                                        margin-left: -10px;
                                     }
-                                    
-                                    header:before {
-                                        content: '';
-                                        position: absolute;
-                                        background-color: rgb(51, 51, 51);
+                                }
+                                
+                                @media (min-width: 992px) and (max-width: 1199.98px) {
+                                    nav .nav-item .list-item {
+                                        display: flex;
+                                        width: 70%;
+                                        justify-content: space-between;
+                                        margin-left: -10px;
+                                    }
+                                }
+                                /* end nav */
+                                /* start header */
+                                
+                                header {
+                                    background-image: url(../img/exterior-streetview-black.webp);
+                                    height: 100vh;
+                                    background-size: cover;
+                                    background-position: center;
+                                    display: flex;
+                                    align-items: center;
+                                    position: relative;
+                                    background-repeat: no-repeat;
+                                }
+                                
+                                header:before {
+                                    content: '';
+                                    position: absolute;
+                                    background-color: rgb(51, 51, 51);
+                                    width: 100%;
+                                    height: 100%;
+                                    opacity: 0.5;
+                                }
+                                
+                                header .header-content {
+                                    background-color: var(--footerColor);
+                                    width: 60%;
+                                    height: 300px;
+                                    padding: 50px 50px;
+                                    margin-left: 70px;
+                                    position: relative;
+                                }
+                                
+                                header .header-content h1 {
+                                    color: white;
+                                    text-transform: capitalize;
+                                    font-size: 50px;
+                                    margin-bottom: 10px;
+                                }
+                                
+                                header .header-content p {
+                                    text-transform: capitalize;
+                                    font-size: 20px;
+                                    color: #dedede;
+                                    margin-bottom: 60px;
+                                    line-height: 1.6;
+                                }
+                                
+                                header .btn-header {
+                                    margin-top: 25px;
+                                    border: none;
+                                    padding: 15px 10px;
+                                    color: white;
+                                    background-color: var(--footerColor);
+                                    text-transform: uppercase;
+                                    cursor: pointer;
+                                }
+                                
+                                header .btn-header:hover {
+                                    background-color: white;
+                                    color: var(--mainColor);
+                                }
+                                
+                                @media (max-width: 575.98px) {
+                                    header .header-content h1 {
+                                        font-size: 30px;
+                                    }
+                                    header .header-content {
+                                        background-color: var(--footerColor);
                                         width: 100%;
-                                        height: 100%;
-                                        opacity: 0.5;
+                                        height: 200px;
+                                        padding: 40px 40px;
+                                        margin-left: 0px;
                                     }
-                                    
+                                    header .header-content p {
+                                        font-size: 15px;
+                                        color: #dedede;
+                                        margin-bottom: 10px;
+                                    }
+                                }
+                                
+                                @media (min-width: 576px) and (max-width: 767.98px) {
+                                    header .header-content h1 {
+                                        font-size: 30px;
+                                    }
+                                    header .header-content {
+                                        background-color: var(--footerColor);
+                                        width: 100%;
+                                        height: 200px;
+                                        padding: 40px 40px;
+                                        margin-left: 0px;
+                                    }
+                                    header .header-content p {
+                                        font-size: 15px;
+                                        color: #dedede;
+                                        margin-bottom: 10px;
+                                    }
+                                }
+                                
+                                @media (min-width: 768px) and (max-width: 991.98px) {
+                                    header .header-content h1 {
+                                        font-size: 30px;
+                                    }
+                                    header .header-content {
+                                        background-color: var(--footerColor);
+                                        width: 100%;
+                                        height: 200px;
+                                        padding: 40px 40px;
+                                        margin-left: 0px;
+                                    }
+                                    header .header-content p {
+                                        font-size: 15px;
+                                        color: #dedede;
+                                        margin-bottom: 10px;
+                                    }
+                                }
+                                
+                                @media (min-width: 992px) and (max-width: 1199.98px) {
+                                    header .header-content h1 {
+                                        font-size: 30px;
+                                    }
                                     header .header-content {
                                         background-color: var(--footerColor);
                                         width: 60%;
-                                        height: 300px;
+                                        height: 250px;
                                         padding: 50px 50px;
                                         margin-left: 70px;
                                         position: relative;
                                     }
-                                    
-                                    header .header-content h1 {
-                                        color: white;
-                                        text-transform: capitalize;
-                                        font-size: 50px;
+                                    header .header-content p {
+                                        font-size: 15px;
+                                        color: #dedede;
                                         margin-bottom: 10px;
                                     }
-                                    
-                                    header .header-content p {
-                                        text-transform: capitalize;
-                                        font-size: 20px;
-                                        color: #dedede;
-                                        margin-bottom: 60px;
-                                        line-height: 1.6;
-                                    }
-                                    
-                                    header .btn-header {
-                                        margin-top: 25px;
-                                        border: none;
-                                        padding: 15px 10px;
-                                        color: white;
-                                        background-color: var(--footerColor);
-                                        text-transform: uppercase;
-                                        cursor: pointer;
-                                    }
-                                    
-                                    header .btn-header:hover {
-                                        background-color: white;
-                                        color: var(--mainColor);
-                                    }
-                                    
-                                    @media (max-width: 575.98px) {
-                                        header .header-content h1 {
-                                            font-size: 30px;
-                                        }
-                                        header .header-content {
-                                            background-color: var(--footerColor);
-                                            width: 100%;
-                                            height: 200px;
-                                            padding: 40px 40px;
-                                            margin-left: 0px;
-                                        }
-                                        header .header-content p {
-                                            font-size: 15px;
-                                            color: #dedede;
-                                            margin-bottom: 10px;
-                                        }
-                                    }
-                                    
-                                    @media (min-width: 576px) and (max-width: 767.98px) {
-                                        header .header-content h1 {
-                                            font-size: 30px;
-                                        }
-                                        header .header-content {
-                                            background-color: var(--footerColor);
-                                            width: 100%;
-                                            height: 200px;
-                                            padding: 40px 40px;
-                                            margin-left: 0px;
-                                        }
-                                        header .header-content p {
-                                            font-size: 15px;
-                                            color: #dedede;
-                                            margin-bottom: 10px;
-                                        }
-                                    }
-                                    
-                                    @media (min-width: 768px) and (max-width: 991.98px) {
-                                        header .header-content h1 {
-                                            font-size: 30px;
-                                        }
-                                        header .header-content {
-                                            background-color: var(--footerColor);
-                                            width: 100%;
-                                            height: 200px;
-                                            padding: 40px 40px;
-                                            margin-left: 0px;
-                                        }
-                                        header .header-content p {
-                                            font-size: 15px;
-                                            color: #dedede;
-                                            margin-bottom: 10px;
-                                        }
-                                    }
-                                    
-                                    @media (min-width: 992px) and (max-width: 1199.98px) {
-                                        header .header-content h1 {
-                                            font-size: 30px;
-                                        }
-                                        header .header-content {
-                                            background-color: var(--footerColor);
-                                            width: 60%;
-                                            height: 250px;
-                                            padding: 50px 50px;
-                                            margin-left: 70px;
-                                            position: relative;
-                                        }
-                                        header .header-content p {
-                                            font-size: 15px;
-                                            color: #dedede;
-                                            margin-bottom: 10px;
-                                        }
-                                    }
-                                    /* end hader */
-                                    /* start section 1 */
-                                    
+                                }
+                                /* end hader */
+                                /* start section 1 */
+                                
+                                section .section1 {
+                                    padding-top: 110px;
+                                    padding-bottom: 110px;
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                }
+                                
+                                section .section1 h2 {
+                                    font-size: 41px;
+                                    color: var(--footerColor);
+                                }
+                                
+                                section .section1 .choose {
+                                    width: 100%;
+                                }
+                                
+                                section .section1 .choose .row {
+                                    width: 100%;
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                }
+                                
+                                section .section1 .search-item {
+                                    border: 1px solid #dedede;
+                                    transition: 0.3s;
+                                    margin-top: 50px;
+                                    width: 30%;
+                                }
+                                
+                                section .section1 .search-item:hover {
+                                    border-color: transparent;
+                                    box-shadow: 0px 0px 10px 2px grey;
+                                }
+                                
+                                section .section1 .search-item .item img {
+                                    width: 100%;
+                                    height: 220px;
+                                    transition: 0.4s;
+                                    transform: scale(1);
+                                }
+                                
+                                section .section1 .search-item img:hover {
+                                    transform: scale(1.1);
+                                }
+                                
+                                section .section1 .search-item .content {
+                                    padding-top: 15px;
+                                }
+                                
+                                section .section1 .search-item .content h5 a {
+                                    color: #000;
+                                    font-size: 20px;
+                                    font-weight: bold;
+                                    transition: 0.3s;
+                                }
+                                
+                                section .section1 .search-item .content h5:hover a {
+                                    color: var(--mainColor);
+                                    text-decoration: underline;
+                                }
+                                
+                                section .section1 .search-item .content p {
+                                    color: #5e5e5e;
+                                    line-height: 2;
+                                    margin: 0;
+                                    font-weight: 400;
+                                    margin-bottom: 23px;
+                                }
+                                
+                                section .section1 .search-item .content p i {
+                                    color: var(--mainColor);
+                                    padding-right: 10px;
+                                }
+                                
+                                section .section1 .search-item .content .detals {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    margin-bottom: 15px;
+                                }
+                                
+                                section .section1 .search-item .content .detals span {
+                                    color: #000;
+                                    text-transform: uppercase;
+                                    font-weight: 600;
+                                    font-size: 14px;
+                                }
+                                
+                                section .section1 .search-item .content .detals .price {
+                                    color: var(--mainColor);
+                                    font-size: 17px;
+                                    font-weight: 600;
+                                }
+                                
+                                @media (max-width: 575.98px) {
                                     section .section1 {
-                                        padding-top: 110px;
-                                        padding-bottom: 110px;
-                                        display: flex;
-                                        flex-wrap: wrap;
+                                        padding-top: 70px;
+                                        padding-bottom: 70px;
                                     }
-                                    
-                                    section .section1 h2 {
-                                        font-size: 41px;
-                                        color: var(--footerColor);
-                                    }
-                                    
-                                    section .section1 .choose {
-                                        width: 100%;
-                                    }
-                                    
-                                    section .section1 .choose .row {
-                                        width: 100%;
-                                        display: flex;
-                                        flex-wrap: wrap;
-                                    }
-                                    
                                     section .section1 .search-item {
-                                        border: 1px solid #dedede;
-                                        transition: 0.3s;
-                                        margin-top: 50px;
+                                        width: 100%;
+                                    }
+                                    section .section1 h2 {
+                                        width: 100%;
+                                        font-size: 25px;
+                                    }
+                                }
+                                
+                                @media (min-width: 576px) and (max-width: 767.98px) {
+                                    section .section1 {
+                                        padding-top: 70px;
+                                        padding-bottom: 70px;
+                                    }
+                                    section .section1 .search-item {
+                                        width: 45%;
+                                    }
+                                    section .section1 h2 {
+                                        width: 100%;
+                                        font-size: 25px;
+                                    }
+                                }
+                                /* end section 1 */
+                                /* start section 2 */
+                                
+                                section .section2 {
+                                    background-color: var(--mainColor);
+                                }
+                                
+                                section .section2 .content {
+                                    width: 40%;
+                                    padding-left: 25px;
+                                }
+                                
+                                section .section2 .content h3 {
+                                    color: white;
+                                    font-weight: 900;
+                                    font-size: 40px;
+                                    line-height: 1.3;
+                                    padding-top: 80px;
+                                    padding-bottom: 30px;
+                                }
+                                
+                                section .section2 p {
+                                    color: white;
+                                    padding-bottom: 10px;
+                                    line-height: 1.4;
+                                    font-size: 16px;
+                                    margin-bottom: 10px;
+                                }
+                                
+                                section .section2 .content .btn {
+                                    color: white;
+                                    background: linear-gradient(to left, #140c40, #0e0835, #140c40);
+                                    border: none;
+                                    padding: 14px 34px;
+                                    border-radius: 25px;
+                                    font-size: 18px;
+                                    margin-bottom: 50px;
+                                    transition: 0.5s;
+                                    width: 40%;
+                                }
+                                
+                                section .section2 .content .btn:hover {
+                                    background: linear-gradient(to left, #140c40, #0e0835, #140c40)!important;
+                                }
+                                
+                                section .section2 .slider-container {
+                                    height: 500px;
+                                    width: 55%;
+                                    position: relative;
+                                    overflow: hidden;
+                                    text-align: center;
+                                }
+                                
+                                section .section2 .slider-container .menu {
+                                    position: absolute;
+                                    left: 0;
+                                    z-index: 900;
+                                    width: 100%;
+                                    bottom: 0;
+                                }
+                                
+                                section .section2 .menu label {
+                                    cursor: pointer;
+                                    display: inline-block;
+                                    width: 20px;
+                                    height: 20px;
+                                    background: #fff;
+                                    border-radius: 50px;
+                                    margin: 10px 5px;
+                                }
+                                
+                                section .section2 .slide {
+                                    width: 100%;
+                                    height: 100%;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    z-index: 10;
+                                    padding: 8em 1em 0;
+                                    background-size: cover;
+                                    transition: left 0s .75s;
+                                }
+                                
+                                [id^="slide"]:checked+.slide {
+                                    left: 0;
+                                    z-index: 100;
+                                    transition: left .65s ease-out;
+                                }
+                                
+                                .slide-1 {
+                                    background-image: url("../img/Stanley-Home-view-of-bay.jpg");
+                                }
+                                
+                                .slide-2 {
+                                    background-image: url("../img/living-room-inspiration-1592237936.jpg");
+                                }
+                                
+                                .slide-3 {
+                                    background-image: url("../img/How-You-Can-Conceptualise-the-Interior-Design-of-Your-Small-Home-1.jpg");
+                                }
+                                
+                                @media (max-width: 575.98px) {
+                                    section .section2 .row {
+                                        display: inline-block;
+                                    }
+                                    section .section2 .content {
+                                        width: 100%;
+                                    }
+                                    section .section2 .slider-container {
+                                        height: 400px;
+                                        width: 100%;
+                                    }
+                                    section .section2 .content .btn {
+                                        font-size: 18px;
+                                        width: 45%;
+                                    }
+                                }
+                                
+                                @media (min-width: 576px) and (max-width: 767.98px) {
+                                    section .section2 .row {
+                                        display: inline-block;
+                                    }
+                                    section .section2 .content {
+                                        width: 100%;
+                                    }
+                                    section .section2 .slider-container {
+                                        height: 400px;
+                                        width: 100%;
+                                    }
+                                    section .section2 .content .btn {
+                                        font-size: 18px;
+                                        width: 35%;
+                                    }
+                                    section .section2 p {
+                                        width: 90%;
+                                    }
+                                }
+                                
+                                @media (min-width: 768px) and (max-width: 991.98px) {
+                                    section .section2 .row {
+                                        display: inline-block;
+                                    }
+                                    section .section2 .content {
+                                        width: 100%;
+                                    }
+                                    section .section2 .slider-container {
+                                        height: 400px;
+                                        width: 100%;
+                                    }
+                                    section .section2 .content .btn {
+                                        font-size: 18px;
                                         width: 30%;
                                     }
-                                    
-                                    section .section1 .search-item:hover {
-                                        border-color: transparent;
-                                        box-shadow: 0px 0px 10px 2px grey;
-                                    }
-                                    
-                                    section .section1 .search-item .item img {
-                                        width: 100%;
-                                        height: 220px;
-                                        transition: 0.4s;
-                                        transform: scale(1);
-                                    }
-                                    
-                                    section .section1 .search-item img:hover {
-                                        transform: scale(1.1);
-                                    }
-                                    
-                                    section .section1 .search-item .content {
-                                        padding-top: 15px;
-                                    }
-                                    
-                                    section .section1 .search-item .content h5 a {
-                                        color: #000;
-                                        font-size: 20px;
-                                        font-weight: bold;
-                                        transition: 0.3s;
-                                    }
-                                    
-                                    section .section1 .search-item .content h5:hover a {
-                                        color: var(--mainColor);
-                                        text-decoration: underline;
-                                    }
-                                    
-                                    section .section1 .search-item .content p {
-                                        color: #5e5e5e;
-                                        line-height: 2;
-                                        margin: 0;
-                                        font-weight: 400;
-                                        margin-bottom: 23px;
-                                    }
-                                    
-                                    section .section1 .search-item .content p i {
-                                        color: var(--mainColor);
-                                        padding-right: 10px;
-                                    }
-                                    
-                                    section .section1 .search-item .content .detals {
-                                        display: flex;
-                                        justify-content: space-between;
-                                        margin-bottom: 15px;
-                                    }
-                                    
-                                    section .section1 .search-item .content .detals span {
-                                        color: #000;
-                                        text-transform: uppercase;
-                                        font-weight: 600;
-                                        font-size: 14px;
-                                    }
-                                    
-                                    section .section1 .search-item .content .detals .price {
-                                        color: var(--mainColor);
-                                        font-size: 17px;
-                                        font-weight: 600;
-                                    }
-                                    
-                                    @media (max-width: 575.98px) {
-                                        section .section1 {
-                                            padding-top: 70px;
-                                            padding-bottom: 70px;
-                                        }
-                                        section .section1 .search-item {
-                                            width: 100%;
-                                        }
-                                        section .section1 h2 {
-                                            width: 100%;
-                                            font-size: 25px;
-                                        }
-                                    }
-                                    
-                                    @media (min-width: 576px) and (max-width: 767.98px) {
-                                        section .section1 {
-                                            padding-top: 70px;
-                                            padding-bottom: 70px;
-                                        }
-                                        section .section1 .search-item {
-                                            width: 45%;
-                                        }
-                                        section .section1 h2 {
-                                            width: 100%;
-                                            font-size: 25px;
-                                        }
-                                    }
-                                    /* end section 1 */
-                                    /* start section 2 */
-                                    
-                                    section .section2 {
-                                        background-color: var(--mainColor);
-                                    }
-                                    
-                                    section .section2 .content {
-                                        width: 40%;
-                                        padding-left: 25px;
-                                    }
-                                    
-                                    section .section2 .content h3 {
-                                        color: white;
-                                        font-weight: 900;
-                                        font-size: 40px;
-                                        line-height: 1.3;
-                                        padding-top: 80px;
-                                        padding-bottom: 30px;
-                                    }
-                                    
                                     section .section2 p {
-                                        color: white;
-                                        padding-bottom: 10px;
-                                        line-height: 1.4;
-                                        font-size: 16px;
-                                        margin-bottom: 10px;
+                                        width: 90%;
                                     }
-                                    
+                                }
+                                
+                                @media (min-width: 992px) and (max-width: 1199.98px) {
                                     section .section2 .content .btn {
-                                        color: white;
-                                        background: linear-gradient(to left, #140c40, #0e0835, #140c40);
-                                        border: none;
-                                        padding: 14px 34px;
-                                        border-radius: 25px;
-                                        font-size: 18px;
-                                        margin-bottom: 50px;
-                                        transition: 0.5s;
-                                        width: 40%;
+                                        font-size: 15px;
+                                        width: 50%;
                                     }
-                                    
-                                    section .section2 .content .btn:hover {
-                                        background: linear-gradient(to left, #140c40, #0e0835, #140c40)!important;
-                                    }
-                                    
-                                    section .section2 .slider-container {
-                                        height: 500px;
-                                        width: 55%;
-                                        position: relative;
-                                        overflow: hidden;
-                                        text-align: center;
-                                    }
-                                    
-                                    section .section2 .slider-container .menu {
-                                        position: absolute;
-                                        left: 0;
-                                        z-index: 900;
-                                        width: 100%;
-                                        bottom: 0;
-                                    }
-                                    
-                                    section .section2 .menu label {
-                                        cursor: pointer;
-                                        display: inline-block;
-                                        width: 20px;
-                                        height: 20px;
-                                        background: #fff;
-                                        border-radius: 50px;
-                                        margin: 10px 5px;
-                                    }
-                                    
-                                    section .section2 .slide {
-                                        width: 100%;
-                                        height: 100%;
-                                        position: absolute;
-                                        top: 0;
-                                        left: 0;
-                                        z-index: 10;
-                                        padding: 8em 1em 0;
-                                        background-size: cover;
-                                        transition: left 0s .75s;
-                                    }
-                                    
-                                    [id^="slide"]:checked+.slide {
-                                        left: 0;
-                                        z-index: 100;
-                                        transition: left .65s ease-out;
-                                    }
-                                    
-                                    .slide-1 {
-                                        background-image: url("../img/Stanley-Home-view-of-bay.jpg");
-                                    }
-                                    
-                                    .slide-2 {
-                                        background-image: url("../img/living-room-inspiration-1592237936.jpg");
-                                    }
-                                    
-                                    .slide-3 {
-                                        background-image: url("../img/How-You-Can-Conceptualise-the-Interior-Design-of-Your-Small-Home-1.jpg");
-                                    }
-                                    
-                                    @media (max-width: 575.98px) {
-                                        section .section2 .row {
-                                            display: inline-block;
-                                        }
-                                        section .section2 .content {
-                                            width: 100%;
-                                        }
-                                        section .section2 .slider-container {
-                                            height: 400px;
-                                            width: 100%;
-                                        }
-                                        section .section2 .content .btn {
-                                            font-size: 18px;
-                                            width: 45%;
-                                        }
-                                    }
-                                    
-                                    @media (min-width: 576px) and (max-width: 767.98px) {
-                                        section .section2 .row {
-                                            display: inline-block;
-                                        }
-                                        section .section2 .content {
-                                            width: 100%;
-                                        }
-                                        section .section2 .slider-container {
-                                            height: 400px;
-                                            width: 100%;
-                                        }
-                                        section .section2 .content .btn {
-                                            font-size: 18px;
-                                            width: 35%;
-                                        }
-                                        section .section2 p {
-                                            width: 90%;
-                                        }
-                                    }
-                                    
-                                    @media (min-width: 768px) and (max-width: 991.98px) {
-                                        section .section2 .row {
-                                            display: inline-block;
-                                        }
-                                        section .section2 .content {
-                                            width: 100%;
-                                        }
-                                        section .section2 .slider-container {
-                                            height: 400px;
-                                            width: 100%;
-                                        }
-                                        section .section2 .content .btn {
-                                            font-size: 18px;
-                                            width: 30%;
-                                        }
-                                        section .section2 p {
-                                            width: 90%;
-                                        }
-                                    }
-                                    
-                                    @media (min-width: 992px) and (max-width: 1199.98px) {
-                                        section .section2 .content .btn {
-                                            font-size: 15px;
-                                            width: 50%;
-                                        }
-                                    }
-                                    /* end section 2 */
-                                    /* start section 3 */
-                                    
+                                }
+                                /* end section 2 */
+                                /* start section 3 */
+                                
+                                section .section3 {
+                                    background-color: #f5f6f7;
+                                    padding: 120px 0;
+                                }
+                                
+                                section .section3 .for-client .item {
+                                    width: 25%;
+                                    text-align: center;
+                                }
+                                
+                                section .section3 .for-client .item img {
+                                    width: 80%;
+                                    height: 80%;
+                                    transition: .3s;
+                                }
+                                
+                                section .section3 .for-client .item img:hover {
+                                    transform: scale(0.9);
+                                }
+                                
+                                section .section3 .content {
+                                    padding-top: 20px;
+                                    text-align: center;
+                                }
+                                
+                                section .section3 .for-client .item .content h5 a {
+                                    color: #000;
+                                    font-size: 22px;
+                                    text-transform: capitalize;
+                                    text-align: center;
+                                }
+                                
+                                section .section3 .for-client .item .content p {
+                                    color: #57667e;
+                                    font-size: 16px;
+                                    text-align: center;
+                                    padding: 10px 10px;
+                                }
+                                
+                                @media (max-width: 575.98px) {
                                     section .section3 {
-                                        background-color: #f5f6f7;
-                                        padding: 120px 0;
+                                        padding: 50px 0;
                                     }
-                                    
+                                    section .section3 .row {
+                                        display: inline-block;
+                                    }
                                     section .section3 .for-client .item {
-                                        width: 25%;
-                                        text-align: center;
+                                        width: 100%;
+                                        padding-bottom: 20px;
                                     }
-                                    
                                     section .section3 .for-client .item img {
-                                        width: 80%;
-                                        height: 80%;
-                                        transition: .3s;
+                                        width: 50%;
+                                        height: 50%;
                                     }
-                                    
-                                    section .section3 .for-client .item img:hover {
-                                        transform: scale(0.9);
-                                    }
-                                    
-                                    section .section3 .content {
-                                        padding-top: 20px;
-                                        text-align: center;
-                                    }
-                                    
-                                    section .section3 .for-client .item .content h5 a {
-                                        color: #000;
-                                        font-size: 22px;
-                                        text-transform: capitalize;
-                                        text-align: center;
-                                    }
-                                    
                                     section .section3 .for-client .item .content p {
-                                        color: #57667e;
-                                        font-size: 16px;
-                                        text-align: center;
-                                        padding: 10px 10px;
+                                        padding: 10px 0;
                                     }
-                                    
-                                    @media (max-width: 575.98px) {
-                                        section .section3 {
-                                            padding: 50px 0;
-                                        }
-                                        section .section3 .row {
-                                            display: inline-block;
-                                        }
-                                        section .section3 .for-client .item {
-                                            width: 100%;
-                                            padding-bottom: 20px;
-                                        }
-                                        section .section3 .for-client .item img {
-                                            width: 50%;
-                                            height: 50%;
-                                        }
-                                        section .section3 .for-client .item .content p {
-                                            padding: 10px 0;
-                                        }
+                                }
+                                
+                                @media (min-width: 576px) and (max-width: 767.98px) {
+                                    section .section3 .row {
+                                        display: flex;
+                                        flex-wrap: wrap;
                                     }
-                                    
-                                    @media (min-width: 576px) and (max-width: 767.98px) {
-                                        section .section3 .row {
-                                            display: flex;
-                                            flex-wrap: wrap;
-                                        }
-                                        section .section3 .for-client .item {
-                                            padding-bottom: 20px;
-                                            width: 45%;
-                                        }
-                                        section .section3 .for-client .item img {
-                                            width: 60%;
-                                            height: 60%;
-                                        }
+                                    section .section3 .for-client .item {
+                                        padding-bottom: 20px;
+                                        width: 45%;
                                     }
-                                    
-                                    @media (min-width: 768px) and (max-width: 991.98px) {
-                                        section .section3 .row {
-                                            display: flex;
-                                            flex-wrap: wrap;
-                                        }
-                                        section .section3 .for-client .item {
-                                            padding-bottom: 20px;
-                                            width: 45%;
-                                        }
-                                        section .section3 .for-client .item img {
-                                            width: 60%;
-                                            height: 60%;
-                                        }
+                                    section .section3 .for-client .item img {
+                                        width: 60%;
+                                        height: 60%;
                                     }
-                                    /*end section 3 */
-                                    /*start section 4 */
-                                    
+                                }
+                                
+                                @media (min-width: 768px) and (max-width: 991.98px) {
+                                    section .section3 .row {
+                                        display: flex;
+                                        flex-wrap: wrap;
+                                    }
+                                    section .section3 .for-client .item {
+                                        padding-bottom: 20px;
+                                        width: 45%;
+                                    }
+                                    section .section3 .for-client .item img {
+                                        width: 60%;
+                                        height: 60%;
+                                    }
+                                }
+                                /*end section 3 */
+                                /*start section 4 */
+                                
+                                section .section4 {
+                                    display: flex;
+                                    width: 100%;
+                                    height: 280px;
+                                    flex-wrap: nowrap;
+                                }
+                                
+                                section .choose-item {
+                                    width: 20%;
+                                    position: relative;
+                                }
+                                
+                                section .choose-item img {
+                                    display: block;
+                                    width: 100%;
+                                    height: 280px;
+                                }
+                                
+                                section .section4 .choose-item .overlay:before {
+                                    content: "";
+                                    position: absolute;
+                                    width: 100%;
+                                    height: 280px;
+                                    background-color: var(--footerColor);
+                                    opacity: 0.5;
+                                    top: 0;
+                                    left: 0;
+                                    right: 0;
+                                    bottom: 0;
+                                    z-index: 1;
+                                    visibility: hidden;
+                                    transition: 0.2s;
+                                }
+                                
+                                section .section4 .choose-item:hover .overlay:before {
+                                    visibility: visible;
+                                }
+                                
+                                section .section4 .choose-item .btn {
+                                    background-color: var(--footerColor);
+                                    color: #fff;
+                                    font-size: 16px;
+                                    width: 150px;
+                                    height: 50px;
+                                    line-height: 50px;
+                                    border-radius: 30px;
+                                    border: none;
+                                    position: absolute;
+                                    z-index: 2;
+                                    top: 190px;
+                                    margin-left: 60px;
+                                    transition: 0.5s;
+                                    bottom: 10%;
+                                    display: inline-block;
+                                }
+                                
+                                section .section4 .choose-item .btn:hover {
+                                    background-color: var(--mainColor);
+                                    top: 170px;
+                                }
+                                
+                                @media (max-width: 575.98px) {
                                     section .section4 {
                                         display: flex;
-                                        width: 100%;
-                                        height: 280px;
-                                        flex-wrap: nowrap;
+                                        flex-wrap: wrap;
+                                        height: 200vh;
+                                        justify-content: center;
                                     }
-                                    
                                     section .choose-item {
-                                        width: 20%;
-                                        position: relative;
+                                        width: 45%;
                                     }
-                                    
                                     section .choose-item img {
-                                        display: block;
-                                        width: 100%;
-                                        height: 280px;
+                                        padding-left: 10px;
                                     }
-                                    
-                                    section .section4 .choose-item .overlay:before {
-                                        content: "";
-                                        position: absolute;
-                                        width: 100%;
-                                        height: 280px;
-                                        background-color: var(--footerColor);
-                                        opacity: 0.5;
-                                        top: 0;
-                                        left: 0;
-                                        right: 0;
-                                        bottom: 0;
-                                        z-index: 1;
-                                        visibility: hidden;
-                                        transition: 0.2s;
-                                    }
-                                    
-                                    section .section4 .choose-item:hover .overlay:before {
-                                        visibility: visible;
-                                    }
-                                    
                                     section .section4 .choose-item .btn {
-                                        background-color: var(--footerColor);
-                                        color: #fff;
-                                        font-size: 16px;
-                                        width: 150px;
-                                        height: 50px;
-                                        line-height: 50px;
-                                        border-radius: 30px;
-                                        border: none;
-                                        position: absolute;
-                                        z-index: 2;
-                                        top: 190px;
-                                        margin-left: 60px;
-                                        transition: 0.5s;
-                                        bottom: 10%;
-                                        display: inline-block;
+                                        margin-left: 35px;
                                     }
-                                    
-                                    section .section4 .choose-item .btn:hover {
-                                        background-color: var(--mainColor);
-                                        top: 170px;
+                                }
+                                
+                                @media (min-width: 576px) and (max-width: 767.98px) {
+                                    section .section4 {
+                                        display: flex;
+                                        flex-wrap: wrap;
+                                        height: 200vh;
+                                        justify-content: center;
                                     }
-                                    
-                                    @media (max-width: 575.98px) {
-                                        section .section4 {
-                                            display: flex;
-                                            flex-wrap: wrap;
-                                            height: 200vh;
-                                            justify-content: center;
-                                        }
-                                        section .choose-item {
-                                            width: 45%;
-                                        }
-                                        section .choose-item img {
-                                            padding-left: 10px;
-                                        }
-                                        section .section4 .choose-item .btn {
-                                            margin-left: 35px;
-                                        }
+                                    section .choose-item {
+                                        width: 45%;
                                     }
-                                    
-                                    @media (min-width: 576px) and (max-width: 767.98px) {
-                                        section .section4 {
-                                            display: flex;
-                                            flex-wrap: wrap;
-                                            height: 200vh;
-                                            justify-content: center;
-                                        }
-                                        section .choose-item {
-                                            width: 45%;
-                                        }
-                                        section .choose-item img {
-                                            padding-left: 10px;
-                                        }
-                                        section .section4 .choose-item .btn {
-                                            margin-left: 80px;
-                                        }
+                                    section .choose-item img {
+                                        padding-left: 10px;
                                     }
-                                    
-                                    @media (min-width: 768px) and (max-width: 991.98px) {
-                                        section .section4 {
-                                            display: flex;
-                                            flex-wrap: wrap;
-                                            height: 200vh;
-                                            justify-content: center;
-                                        }
-                                        section .choose-item {
-                                            width: 45%;
-                                        }
-                                        section .choose-item img {
-                                            padding-left: 10px;
-                                        }
-                                        section .section4 .choose-item .btn {
-                                            margin-left: 100px;
-                                        }
+                                    section .section4 .choose-item .btn {
+                                        margin-left: 80px;
                                     }
-                                    
-                                    @media (min-width: 992px) and (max-width: 1199.98px) {
-                                        section .section4 .choose-item .btn {
-                                            margin-left: 25px;
-                                        }
+                                }
+                                
+                                @media (min-width: 768px) and (max-width: 991.98px) {
+                                    section .section4 {
+                                        display: flex;
+                                        flex-wrap: wrap;
+                                        height: 200vh;
+                                        justify-content: center;
                                     }
-                                    /* end section 4 */
-                                    /* Start footer */
-                                    
+                                    section .choose-item {
+                                        width: 45%;
+                                    }
+                                    section .choose-item img {
+                                        padding-left: 10px;
+                                    }
+                                    section .section4 .choose-item .btn {
+                                        margin-left: 100px;
+                                    }
+                                }
+                                
+                                @media (min-width: 992px) and (max-width: 1199.98px) {
+                                    section .section4 .choose-item .btn {
+                                        margin-left: 25px;
+                                    }
+                                }
+                                /* end section 4 */
+                                /* Start footer */
+                                
+                                footer {
+                                    background-color: var(--footerColor);
+                                    padding-top: 140px;
+                                    padding-bottom: 20px;
+                                    position: relative;
+                                }
+                                
+                                footer .row {
+                                    align-items: stretch;
+                                }
+                                
+                                footer .footer-top .footer-item {
+                                    align-items: stretch;
+                                    position: relative;
+                                    width: 100%;
+                                    min-height: 1 px;
+                                    padding-right: 15 px;
+                                    padding-left: 15 px;
+                                }
+                                
+                                footer .footer-top .footer-item a img {
+                                    margin-bottom: 24px;
+                                }
+                                
+                                footer .footer-top .footer-item h4 {
+                                    color: #fff;
+                                    font-size: 22px;
+                                    margin-bottom: 29px;
+                                    font-weight: 400;
+                                    text-transform: capitalize;
+                                }
+                                
+                                footer .footer-top ul li {
+                                    margin-bottom: 13px;
+                                    text-transform: capitalize;
+                                    font-size: 15px;
+                                }
+                                
+                                footer .footer-top .footer-item ul li a {
+                                    transition: 0.4s;
+                                    color: #c2c5db;
+                                    font-weight: 300;
+                                    font-size: 17px;
+                                }
+                                
+                                footer .footer-top .footer-item ul li a:hover {
+                                    color: var(--mainColor);
+                                    padding-left: 5px;
+                                }
+                                
+                                footer .footer-top .footer-item p {
+                                    color: #c2c5db;
+                                    line-height: 25px;
+                                    margin-bottom: 50px;
+                                    font-size: 20px;
+                                }
+                                
+                                footer .footer-top a i {
+                                    text-align: center;
+                                    transition: 0.5s;
+                                    width: 40px;
+                                    height: 40px;
+                                    border-radius: 50%;
+                                    border: 1px solid var(--mainColor);
+                                    margin-left: 5px;
+                                    font-size: 15px;
+                                    padding: 10px 0;
+                                    color: var(--mainColor);
+                                }
+                                
+                                footer .footer-top a i:hover {
+                                    background-color: var(--mainColor);
+                                    color: white;
+                                }
+                                
+                                footer .footer-item .email,
+                                .btn {
+                                    width: 100%;
+                                    height: 43px;
+                                    /* padding: 20px 20px; */
+                                    border: 1px solid rgba(255, 255, 255, .2);
+                                    background: no-repeat;
+                                    color: #fff;
+                                    border-radius: 30px;
+                                    text-align: center;
+                                    margin: 10px 0;
+                                }
+                                
+                                footer .footer-item .btn {
+                                    background-color: var(--mainColor);
+                                    font-size: 17px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                
+                                footer label {
+                                    text-transform: capitalize;
+                                    color: white;
+                                }
+                                
+                                footer .footer-end .color {
+                                    color: white;
+                                }
+                                
+                                footer .footer-end p {
+                                    padding-top: 70px;
+                                    font-size: 18px;
+                                    line-height: 1.5;
+                                    color: #212529;
+                                    text-align: center;
+                                }
+                                
+                                @media (max-width: 575.98px) {
                                     footer {
                                         background-color: var(--footerColor);
-                                        padding-top: 140px;
-                                        padding-bottom: 20px;
-                                        position: relative;
+                                        padding-top: 50px;
                                     }
-                                    
                                     footer .row {
-                                        align-items: stretch;
+                                        display: inline-block;
                                     }
-                                    
                                     footer .footer-top .footer-item {
-                                        align-items: stretch;
-                                        position: relative;
-                                        width: 100%;
-                                        min-height: 1 px;
-                                        padding-right: 15 px;
-                                        padding-left: 15 px;
+                                        max-width: 100%;
+                                        padding-top: 30px;
                                     }
-                                    
-                                    footer .footer-top .footer-item a img {
-                                        margin-bottom: 24px;
-                                    }
-                                    
-                                    footer .footer-top .footer-item h4 {
-                                        color: #fff;
-                                        font-size: 22px;
-                                        margin-bottom: 29px;
-                                        font-weight: 400;
-                                        text-transform: capitalize;
-                                    }
-                                    
-                                    footer .footer-top ul li {
-                                        margin-bottom: 13px;
-                                        text-transform: capitalize;
-                                        font-size: 15px;
-                                    }
-                                    
-                                    footer .footer-top .footer-item ul li a {
-                                        transition: 0.4s;
-                                        color: #c2c5db;
-                                        font-weight: 300;
-                                        font-size: 17px;
-                                    }
-                                    
-                                    footer .footer-top .footer-item ul li a:hover {
-                                        color: var(--mainColor);
-                                        padding-left: 5px;
-                                    }
-                                    
-                                    footer .footer-top .footer-item p {
-                                        color: #c2c5db;
-                                        line-height: 25px;
-                                        margin-bottom: 50px;
-                                        font-size: 20px;
-                                    }
-                                    
-                                    footer .footer-top a i {
-                                        text-align: center;
-                                        transition: 0.5s;
-                                        width: 40px;
-                                        height: 40px;
-                                        border-radius: 50%;
-                                        border: 1px solid var(--mainColor);
-                                        margin-left: 5px;
-                                        font-size: 15px;
-                                        padding: 10px 0;
-                                        color: var(--mainColor);
-                                    }
-                                    
-                                    footer .footer-top a i:hover {
-                                        background-color: var(--mainColor);
-                                        color: white;
-                                    }
-                                    
-                                    footer .footer-item .email,
-                                    .btn {
-                                        width: 100%;
-                                        height: 43px;
-                                        /* padding: 20px 20px; */
-                                        border: 1px solid rgba(255, 255, 255, .2);
-                                        background: no-repeat;
-                                        color: #fff;
-                                        border-radius: 30px;
-                                        text-align: center;
-                                        margin: 10px 0;
-                                    }
-                                    
-                                    footer .footer-item .btn {
-                                        background-color: var(--mainColor);
-                                        font-size: 17px;
-                                        display: flex;
-                                        justify-content: center;
-                                        align-items: center;
-                                    }
-                                    
-                                    footer label {
-                                        text-transform: capitalize;
-                                        color: white;
-                                    }
-                                    
-                                    footer .footer-end .color {
-                                        color: white;
-                                    }
-                                    
-                                    footer .footer-end p {
+                                }
+                                
+                                @media (min-width: 576px) and (max-width: 767.98px) {
+                                    footer {
                                         padding-top: 70px;
-                                        font-size: 18px;
-                                        line-height: 1.5;
-                                        color: #212529;
-                                        text-align: center;
                                     }
-                                    
-                                    @media (max-width: 575.98px) {
-                                        footer {
-                                            background-color: var(--footerColor);
-                                            padding-top: 50px;
-                                        }
-                                        footer .row {
-                                            display: inline-block;
-                                        }
-                                        footer .footer-top .footer-item {
-                                            max-width: 100%;
-                                            padding-top: 30px;
-                                        }
+                                    footer .footer-top .row {
+                                        display: flex;
+                                        justify-content: space-between;
+                                        align-items: stretch;
+                                        flex-wrap: wrap;
                                     }
-                                    
-                                    @media (min-width: 576px) and (max-width: 767.98px) {
-                                        footer {
-                                            padding-top: 70px;
-                                        }
-                                        footer .footer-top .row {
-                                            display: flex;
-                                            justify-content: space-between;
-                                            align-items: stretch;
-                                            flex-wrap: wrap;
-                                        }
-                                        footer .footer-top .footer-item {
-                                            width: 40%;
-                                            padding-top: 20px;
-                                        }
+                                    footer .footer-top .footer-item {
+                                        width: 40%;
+                                        padding-top: 20px;
                                     }
-                                    
-                                    @media (min-width: 768px) and (max-width: 991.98px) {
-                                        footer {
-                                            padding-top: 70px;
-                                        }
-                                        footer .footer-top .row {
-                                            display: flex;
-                                            justify-content: space-between;
-                                            align-items: stretch;
-                                            flex-wrap: wrap;
-                                        }
-                                        footer .footer-top .footer-item {
-                                            width: 30%;
-                                            padding-top: 20px;
-                                        }
+                                }
+                                
+                                @media (min-width: 768px) and (max-width: 991.98px) {
+                                    footer {
+                                        padding-top: 70px;
                                     }
-                                    /* End footer */
+                                    footer .footer-top .row {
+                                        display: flex;
+                                        justify-content: space-between;
+                                        align-items: stretch;
+                                        flex-wrap: wrap;
+                                    }
+                                    footer .footer-top .footer-item {
+                                        width: 30%;
+                                        padding-top: 20px;
+                                    }
+                                }
+                                /* End footer */
